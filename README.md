@@ -1,5 +1,6 @@
 # wikiIdeas
 
+HOLA!
 Proyecto colaborativo para ID for Ideas
 
 ### Integrantes:
