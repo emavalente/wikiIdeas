@@ -2,12 +2,12 @@
 
 Proyecto colaborativo para ID for Ideas
 
-## Integrantes:
+### Integrantes:
 
 - Desarrollo Backend
 
   - Joaquín Labrador
-  - Cristian ?
+  - Cristian Cespedes
 
 - Desarrollo Frontend
 
@@ -20,4 +20,4 @@ Proyecto colaborativo para ID for Ideas
 
 - QA testing
   - Gonzalo Pereyra
-  - Patricia ?
+  - Patricia Garcia
