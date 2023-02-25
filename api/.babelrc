@@ -1,0 +1,6 @@
+//babel is for the app running on the server in old browsers transpiling the code to es5
+
+// Path: .babelrc
+{
+    "presets": ["@babel/preset-env", "@babel/preset-react"]
+}
