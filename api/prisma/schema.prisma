@@ -20,8 +20,8 @@ model Article {
     id_category Int
     category    Category @relation(fields: [id_category], references: [id])
 
-    id_thumbnail Int       @unique
-    thumbnail    Thumbnail @relation(fields: [id_thumbnail], references: [id])
+    id_thumbnail Int?       @unique
+    thumbnail    Thumbnail? @relation(fields: [id_thumbnail], references: [id])
 }
 
 model Category {

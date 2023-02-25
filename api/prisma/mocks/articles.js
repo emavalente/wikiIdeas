@@ -25,4 +25,13 @@ const ARTICLE3 = {
   id_thumbnail: 3,
 };
 
-export const ARTICLE_LIST = [ARTICLE1, ARTICLE2, ARTICLE3];
+const ARTICLE4 = {
+  title: "Historia de la computacion",
+  body: "Esta es la historia de la computacion",
+  like: 2,
+  dislike: 10,
+  id_category: 7,
+  id_thumbnail: null,
+};
+
+export const ARTICLE_LIST = [ARTICLE1, ARTICLE2, ARTICLE3, ARTICLE4];
