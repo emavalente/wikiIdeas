@@ -14,7 +14,7 @@ export class ArticleService {
   async getPagedArticles(take, skip) {
     if (take && !skip) skip = 0;
     else if (!take && skip) take = 0;
-
+    
     return await this.articleRepository.getPagedArticles(take, skip);
   }
 }
