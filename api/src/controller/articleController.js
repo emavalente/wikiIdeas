@@ -36,4 +36,17 @@ export class ArticleController {
       res.status(500).send({ message: "Internal server error" });
     }
   }
+
+  async getArticlesByCategory(req, res) {
+    try {
+      const articles = await this.articleService.getArticlesByCategory(
+        req.params.categoryId
+      );
+      return !articles || articles.length === 0
+        ? res.status(404).send({ message: "Articles not found" })
+        : res.status(200).send(articles);
+    } catch (err) {
+      res.status(500).send({ message: "Internal server error" });
+    }
+  }
 }

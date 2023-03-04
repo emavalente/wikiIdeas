@@ -9,7 +9,13 @@ export class ArticleRepository {
 
   async getArticles() {
     try {
-      return await this.prisma.article.findMany();
+      //return all articles and your thumbail
+      return await this.prisma.article.findMany({
+        include: {
+          thumbnail: true,
+          category: true,
+        },
+      });
     } catch (err) {
       throw new Error(err);
     }
@@ -20,6 +26,10 @@ export class ArticleRepository {
       return await this.prisma.article.findUnique({
         where: {
           id: parseInt(id),
+        },
+        include: {
+          thumbnail: true,
+          category: true,
         },
       });
     } catch (err) {
@@ -32,6 +42,29 @@ export class ArticleRepository {
       return await this.prisma.article.findMany({
         skip: parseInt(skip),
         take: parseInt(take),
+        include: {
+          thumbnail: true,
+          category: true,
+        },
+      });
+    } catch (err) {
+      console.log(err);
+      throw new Error(err);
+    }
+  }
+
+  async getArticlesByCategory(categoryId) {
+    try {
+      return await this.prisma.article.findMany({
+        where: {
+          category: {
+            id: parseInt(categoryId),
+          },
+        },
+        include: {
+          thumbnail: true,
+          category: false,
+        },
       });
     } catch (err) {
       console.log(err);

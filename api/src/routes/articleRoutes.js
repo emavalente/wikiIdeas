@@ -15,6 +15,10 @@ router
     "/getPagedArticles",
     [verifyPagination],
     articleController.getPagedArticles.bind(articleController)
+  )
+  .get(
+    "/getArticlesByCategory/:categoryId",
+    articleController.getArticlesByCategory.bind(articleController)
   );
 
 export default router;
