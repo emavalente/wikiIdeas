@@ -35,7 +35,16 @@ describe("GET /api/wiki-ideas/getArticles ", () => {
               "UpdatedAt",
               "CreatedAt",
             ]);
+          } else {
+            assert.equal(article.thumbnail, null);
           }
+
+          assert.containsAllKeys(article.category, [
+            "id",
+            "name",
+            "UpdatedAt",
+            "CreatedAt",
+          ]);
         });
       })
       .then(
@@ -68,9 +77,20 @@ describe("GET /api/wiki-ideas/getArticles/id ", () => {
           "category",
         ]);
 
-        assert.containsAllKeys(res._body.thumbnail, [
+        if (res._body.thumbnail) {
+          assert.containsAllKeys(res._body.thumbnail, [
+            "id",
+            "url",
+            "UpdatedAt",
+            "CreatedAt",
+          ]);
+        } else {
+          assert.equal(res._body.thumbnail, null);
+        }
+
+        assert.containsAllKeys(res._body.category, [
           "id",
-          "url",
+          "name",
           "UpdatedAt",
           "CreatedAt",
         ]);
@@ -111,7 +131,16 @@ describe("GET /api/wiki-ideas/getPagedArticles ", () => {
               "UpdatedAt",
               "CreatedAt",
             ]);
+          } else {
+            assert.equal(article.thumbnail, null);
           }
+
+          assert.containsAllKeys(article.category, [
+            "id",
+            "name",
+            "UpdatedAt",
+            "CreatedAt",
+          ]);
         });
       })
       .then(
@@ -124,12 +153,12 @@ describe("GET /api/wiki-ideas/getPagedArticles ", () => {
 describe("GET /api/wiki-ideas/getArticlesByCategory/:categoryId ", () => {
   it("should return all article of one category", (done) => {
     request(app)
-      .get("/api/wiki-ideas/getArticlesByCategory/7")
+      .get("/api/wiki-ideas/getArticlesByCategory/1")
       .expect(200)
       .expect("Content-Type", /json/)
       .then((res) => {
+        assert.isNotEmpty(res._body);
         res._body.forEach((article) => {
-          assert.isNotEmpty(res._body);
           assert.containsAllKeys(article, [
             "id",
             "title",
@@ -150,7 +179,14 @@ describe("GET /api/wiki-ideas/getArticlesByCategory/:categoryId ", () => {
               "UpdatedAt",
               "CreatedAt",
             ]);
+          } else {
+            assert.equal(article.thumbnail, null);
           }
+
+          assert.ok(
+            !(article.category in article),
+            "Category is not in article"
+          );
         });
       })
       .then(
