@@ -1,6 +1,5 @@
 import { assert } from "chai";
 import { describe, it } from "mocha";
-import { EmptyResultError } from "sequelize";
 import request from "supertest";
 
 import app from "../src/index.js";
@@ -9,7 +8,7 @@ import app from "../src/index.js";
 describe("GET /api/wiki-ideas/getArticles ", () => {
   it("should return all article", (done) => {
     request(app)
-      .get("/api/wiki-ideas/getPagedArticles/?take=4&skip=3")
+      .get("/api/wiki-ideas/getArticles")
       .expect(200)
       .expect("Content-Type", /json/)
       .then((res) => {
