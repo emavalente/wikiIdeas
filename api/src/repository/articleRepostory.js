@@ -67,7 +67,22 @@ export class ArticleRepository {
         },
       });
     } catch (err) {
-      console.log(err);
+      throw new Error(err);
+    }
+  }
+
+  async getArticleSortByLike() {
+    try {
+      return await this.prisma.article.findMany({
+        orderBy: {
+          like: "desc",
+        },
+        include: {
+          thumbnail: true,
+          category: true,
+        },
+      });
+    } catch (err) {
       throw new Error(err);
     }
   }

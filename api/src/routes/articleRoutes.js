@@ -19,6 +19,10 @@ router
   .get(
     "/getArticlesByCategory/:categoryId",
     articleController.getArticlesByCategory.bind(articleController)
+  )
+  .get(
+    "/getArticleSortByLike",
+    articleController.getArticleSortByLike.bind(articleController)
   );
 
 export default router;

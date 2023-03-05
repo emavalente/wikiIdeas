@@ -21,4 +21,8 @@ export class ArticleService {
   async getArticlesByCategory(categoryId) {
     return await this.articleRepository.getArticlesByCategory(categoryId);
   }
+
+  async getArticleSortByLike() {
+    return await this.articleRepository.getArticleSortByLike();
+  }
 }
