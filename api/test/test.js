@@ -195,6 +195,59 @@ describe("GET /api/wiki-ideas/getArticlesByCategory/:categoryId ", () => {
   });
 });
 
+describe("GET /api/wiki-ideas/getArticleSortByLike ", () => {
+  it("should return all article sorted by likes", (done) => {
+    request(app)
+      .get("/api/wiki-ideas/getArticles")
+      .expect(200)
+      .expect("Content-Type", /json/)
+      .then((res) => {
+        assert.isNotEmpty(res._body);
+        res.body.forEach((article) => {
+          assert.containsAllKeys(article, [
+            "id",
+            "title",
+            "body",
+            "like",
+            "dislike",
+            "CreatedAt",
+            "UpdatedAt",
+            "id_category",
+            "id_thumbnail",
+            "thumbnail",
+            "category",
+          ]);
+          if (article.thumbnail) {
+            assert.containsAllKeys(article.thumbnail, [
+              "id",
+              "url",
+              "UpdatedAt",
+              "CreatedAt",
+            ]);
+          } else {
+            assert.equal(article.thumbnail, null);
+          }
+
+          assert.containsAllKeys(article.category, [
+            "id",
+            "name",
+            "UpdatedAt",
+            "CreatedAt",
+          ]);
+        });
+        //VERIfY IF THE ARTICLE'S ARE SORTED BY LIKE
+        const sorted = res._body.sort((a, b) => {
+          return a.like - b.like;
+        });
+        assert.deepEqual(res._body, sorted);
+      })
+      .then(
+        () => done(),
+        (err) => done(err)
+      );
+  });
+});
+
 //! Category Routes
 
 describe("GET /api/wiki-ideas/getCategories ", () => {
