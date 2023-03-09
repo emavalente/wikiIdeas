@@ -1,0 +1,32 @@
+.navbar {
+  .navbar-toggler {
+    border: none !important;
+
+    &:focus {
+      box-shadow: none !important;
+    }
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  .navbar-brand {
+    font-family: $text-branch;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .navbar__submenu {
+    a {
+      font-size: 0.8rem;
+      text-decoration: none;
+      color: #fff;
+    }
+  }
+}
+
+.btn-close:focus {
+  box-shadow: none !important;
+}

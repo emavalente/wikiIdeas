@@ -4,8 +4,126 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@300;400;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <!-- Animation CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- CSS Styles -->
     <link rel="stylesheet" href="/css/style.css" />
+
     <title>Wiki-Ideas - Enciclopedia Comunitaria</title>
   </head>
-  <body></body>
+  <body>
+    <nav class="navbar navbar-dark fixed-top" style="background-color: transparent">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#lateral-menu">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="2rem"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+            />
+          </svg>
+        </button>
+        <!-- OFFCANVAS CONTAINER START -->
+        <div class="offcanvas offcanvas-start bg-light" id="lateral-menu" tabindex="-1">
+          <div class="offcanvas-header" data-bs-theme="light">
+            <h5 class="offcanvas-title text-black fw-bold fs-4">MENU</h5>
+            <button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="offcanvas"></button>
+          </div>
+          <!-- OFFCANVAS LINKS -->
+          <div class="offcanvas-body d-flex flex-column justify-content-between px-0">
+            <ul class="navbar-nav fs-5 justify-content-evenly">
+              <li class="nav-item p-3 py-md-5">Primer opcion</li>
+              <li class="nav-item p-3 py-md-5">Segunda opcion</li>
+              <li class="nav-item p-3 py-md-5">Tercera opcion</li>
+              <li class="nav-item p-3 py-md-5">Cuarta opcion</li>
+            </ul>
+          </div>
+        </div>
+        <!-- OFFCANVAS CONTAINER END -->
+        <a href="#" class="navbar-brand fs-1">WikiIdeas</a>
+        <div class="navbar__submenu">
+          <a href="#">Crear Contenido</a>
+          <a href="#"
+            >idioma
+            <img style="width: 25px" src="./img/spain_flag-svgrepo.svg" alt="bandera españa" />
+          </a>
+        </div>
+      </div>
+    </nav>
+    <header class="banner-image w-100 vwh-100 pt-5 d-flex flex-column justify-content-evenly">
+      <div class="bienvenida container d-flex flex-column justify-content-center text-center">
+        <h2 class="animate__fadeInDown">Bienvenida...</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis officia ipsam libero et blanditiis
+          illo recusandae eaque adipisci pariatur dignissimos
+        </p>
+      </div>
+      <div class="container d-flex justify-content-center">
+        <form id="form" class="search" action="#">
+          <button id="search" class="search__btn">
+            <ion-icon name="search-outline"></ion-icon>
+          </button>
+          <input type="text" class="search__input" placeholder="Buscar..." />
+        </form>
+      </div>
+      <div class="containter-xxl d-flex justify-content-center animate__animated animate__fadeInUp">
+        <div class="row justify-content-between">
+          <button class="button__btn btn--1">
+            <span>Arte</span>
+          </button>
+          <button class="button__btn btn--2">
+            <span>Cs. Sociales</span>
+          </button>
+          <button class="button__btn btn--3">
+            <span>Cs. Naturales</span>
+          </button>
+          <button class="button__btn btn--4">
+            <span>Geografía</span>
+          </button>
+          <button class="button__btn btn--5">
+            <span>Política</span>
+          </button>
+          <button class="button__btn btn--6">
+            <span>Historia</span>
+          </button>
+          <button class="button__btn btn--7">
+            <span>Religión</span>
+          </button>
+          <button class="button__btn btn--8">
+            <span>Tecnología</span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <!-- Ionic Icons script -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!-- Bootstrap script -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
