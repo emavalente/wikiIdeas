@@ -47,11 +47,11 @@
   background-color: rgb(255, 255, 255);
   padding: 5px;
   width: 100%;
+  max-width: 500px;
   border-radius: 40px;
 }
 .banner-image .search .search__input {
   width: 100%;
-  max-width: 500px;
   border: none;
   outline: none;
   margin-left: 10px;
