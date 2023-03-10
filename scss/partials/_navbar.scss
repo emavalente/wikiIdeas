@@ -1,18 +1,21 @@
 .navbar {
+  background-color: #fff;
   .navbar-toggler {
     border: none !important;
+    color: #6e6767;
 
     &:focus {
       box-shadow: none !important;
     }
 
     &:hover {
-      color: #fff;
+      color: $black;
     }
   }
 
   .navbar-brand {
     font-family: $text-branch;
+    color: $black;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -22,7 +25,7 @@
     a {
       font-size: 0.8rem;
       text-decoration: none;
-      color: #fff;
+      color: $black;
     }
   }
 }

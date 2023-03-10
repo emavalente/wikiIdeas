@@ -5,17 +5,22 @@
   font-family: "Roboto", sans-serif;
 }
 
+.navbar {
+  background-color: #fff;
+}
 .navbar .navbar-toggler {
   border: none !important;
+  color: #6e6767;
 }
 .navbar .navbar-toggler:focus {
   box-shadow: none !important;
 }
 .navbar .navbar-toggler:hover {
-  color: #fff;
+  color: #333333;
 }
 .navbar .navbar-brand {
   font-family: "Lobster", cursive;
+  color: #333333;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -23,7 +28,7 @@
 .navbar .navbar__submenu a {
   font-size: 0.8rem;
   text-decoration: none;
-  color: #fff;
+  color: #333333;
 }
 
 .btn-close:focus {
@@ -38,16 +43,15 @@
   height: 100vh;
 }
 .banner-image .search {
-  padding: 10px;
+  width: 100%;
+  max-width: 500px;
   position: relative;
   display: inline-flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: rgb(255, 255, 255);
-  padding: 5px;
-  width: 100%;
-  max-width: 500px;
+  padding: 5px 10px;
+  background-color: #fff;
   border-radius: 40px;
 }
 .banner-image .search .search__input {
@@ -121,6 +125,34 @@
 }
 .banner-image .button__btn.btn--8::after {
   background-color: rgb(55, 255, 29);
+}
+
+.footer {
+  padding: 3rem;
+  border-radius: 80px 0 0 0;
+  background-color: #81a4cd;
+  text-align: center;
+}
+.footer .footer__brand {
+  font-family: "Lobster", cursive;
+  font-size: 3rem;
+  color: #333333;
+}
+.footer .footer__copyright {
+  font-size: 0.8rem;
+}
+.footer .footer_list {
+  padding-left: 10px;
+}
+.footer .footer_list h5 {
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: start;
+}
+.footer .footer_list ul {
+  padding-left: 0;
+  list-style: none;
+  text-align: start;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,27 @@
+.footer {
+  padding: 3rem;
+  border-radius: 80px 0 0 0;
+  background-color: $blue-light;
+  text-align: center;
+  .footer__brand {
+    font-family: $text-branch;
+    font-size: 3rem;
+    color: $black;
+  }
+  .footer__copyright {
+    font-size: 0.8rem;
+  }
+  .footer_list {
+    padding-left: 10px;
+    h5 {
+      font-weight: bold;
+      font-size: 1rem;
+      text-align: start;
+    }
+    ul {
+      padding-left: 0;
+      list-style: none;
+      text-align: start;
+    }
+  }
+}
